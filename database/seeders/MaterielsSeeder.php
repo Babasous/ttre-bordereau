@@ -29,16 +29,12 @@ class MaterielsSeeder extends Seeder
                 'nom_materiel' => 'Ordinateurs',
             ],
             [
-                'code_materiel' => 'Pr',
+                'code_materiel' => 'P',
                 'nom_materiel' => 'Projecteurs',
             ],
             [
                 'code_materiel' => 'I',
                 'nom_materiel' => 'Imprimantes',
-            ],
-            [
-                'code_materiel' => 'V',
-                'nom_materiel' => 'Variés',
             ],
         ]);
     }

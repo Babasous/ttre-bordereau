@@ -19,8 +19,8 @@ class FournisseursSeeder extends Seeder
             [
                 'code_pays' => 'BE',
                 'pays_fournisseur' => 'Belgique',
-                'nom_fournisseur' => '115 Bld Waterloo 1000 Bruxelles',
-                'adresse_fournisseur' => '',
+                'nom_fournisseur' => 'SPF Justice',
+                'adresse_fournisseur' => '115 Bld Waterloo 1000 Bruxelles',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -35,8 +35,8 @@ class FournisseursSeeder extends Seeder
             [
                 'code_pays' => 'BE',
                 'pays_fournisseur' => 'Belgique',
-                'nom_fournisseur' => 'SPF Sante',
-                'adresse_fournisseur' => '5 Avenue Galilée 1210 Bruxelles',
+                'nom_fournisseur' => 'Lexmark Belgium',
+                'adresse_fournisseur' => '474 Leuvensesteenweg 1930 Zaventem',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -51,7 +51,7 @@ class FournisseursSeeder extends Seeder
             [
                 'code_pays' => 'LU',
                 'pays_fournisseur' => 'Luxembourg',
-                'nom_fournisseur' => 'KBC Banque',
+                'nom_fournisseur' => 'KBC Banque Luxembourg',
                 'adresse_fournisseur' => '89b Parc d\'Activités Capellen 8308 Mamer',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -59,7 +59,7 @@ class FournisseursSeeder extends Seeder
             [
                 'code_pays' => 'DE',
                 'pays_fournisseur' => 'Allemegne',
-                'nom_fournisseur' => 'RICOH',
+                'nom_fournisseur' => 'RICOH Allemagne',
                 'adresse_fournisseur' => 'Vahrenwalder Strasse 315, 30179 Hanovre',
                 'created_at' => now(),
                 'updated_at' => now()

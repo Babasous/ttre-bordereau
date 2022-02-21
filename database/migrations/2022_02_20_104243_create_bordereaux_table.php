@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('total');
             $table->timestamps();
             
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('fournisseur_id')->constrained();
             $table->foreignId('materiel_id')->constrained();
         });

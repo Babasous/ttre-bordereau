@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GlobalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,7 @@ Route::get('/suivi', function () {
     return view('suivi');
 })->middleware(['auth'])->name('suivi');
 
-Route::get('bordereau', function () {
-    return view('bordereau');
-})->middleware(['auth'])->name('bordereau');
+Route::get('/bordereau', [GlobalController::class, 'show'])->middleware(['auth'])->name('bordereau');
 
 Route::get('/codeTracking', function () {
     return view('codeTracking');

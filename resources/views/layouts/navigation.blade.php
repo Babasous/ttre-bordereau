@@ -77,13 +77,13 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Tableau de bord') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('suivi')" :active="request()->routeIs('suivi')">
+            {{-- <x-responsive-nav-link :href="route('suivi')" :active="request()->routeIs('suivi')">
                 {{ __('Suivi') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
             <x-responsive-nav-link :href="route('bordereau')" :active="request()->routeIs('bordereau')">
-                {{ __('Bordereau') }}
+                {{ __('Bordereau d\'enlèvement') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('codeTracking')" :active="request()->routeIs('codeTracking')">
                 {{ __('Code Tracking') }}
@@ -108,7 +108,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Se déconnecter') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
