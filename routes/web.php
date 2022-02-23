@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Bordereau;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GlobalController;
+use App\Http\Controllers\BordereauController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +28,7 @@ Route::get('/suivi', function () {
     return view('suivi');
 })->middleware(['auth'])->name('suivi');
 
-Route::get('/bordereau', [GlobalController::class, 'show'])->middleware(['auth'])->name('bordereau');
+Route::get('/bordereau', [GlobalController::class, 'create'])->middleware(['auth'])->name('bordereau');
 
 Route::get('/codeTracking', function () {
     return view('codeTracking');
@@ -35,5 +37,9 @@ Route::get('/codeTracking', function () {
 Route::get('/fiche', function () {
     return view('fiche');
 })->middleware(['auth'])->name('fiche');
+
+Route::get('/bordereaux/create', [BordereauController::class, 'create'])->name('bordereau.create');
+Route::post('/bordereaux', [BordereauController::class, 'store'])->name('bordereau.store');
+
 
 require __DIR__.'/auth.php';

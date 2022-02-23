@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            {{ __('Encodage pour création du bordereau d\'enlèvement => Bordereau') }} 
+            {{ __('Encodage pour création du bordereau d\'enlèvement') }} 
         </h2>
     </x-slot>
 
-    {{-- <div class="py-12">
+    <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
@@ -208,25 +208,15 @@
 
             btnEnregistrer.onclick = function(){
 
-                if((frmFournisseurs.fournisseurs.value == '') || (frmMateriels.materiels.value == '') || (frmUsers.operateurs.value == '')/*  || (frmQuantite.quantite.value == null) || (frmPoids.inputPoids.value == null) */){
+                if(((frmFournisseurs.fournisseurs.value == '') || (frmMateriels.materiels.value == '') || (frmUsers.operateurs.value == '')) || (frmQuantite.quantite.value == '0') && (frmPoids.poids.value == '0')){
                     message.style.color = "red";
                     message.innerHTML = "Erreur d'encodage, veuillez fournir toutes les données !!!";
                 }else{
                     message.style.color = "green";
-                    message.innerHTML = "Données enregistrées. Vous pouvez visualise le bordereau d'enlèvement";
+                    message.innerHTML = "Données enregistrées. Vous pouvez visualiser le bordereau d'enlèvement";
                     btnEnregistrer.style.display = 'none';
                     btnVisualiser.style.display = 'block';
                 }
             }
-
-            // Impression
-            btnVisualiser.onclick = function(){
-                
-                if(codeTracking == ''){
-                    message.style.color = "red";
-                    message.innerHTML = "Erreur d'encodage, veuillez enregistrer les données !!!";
-                }
-            }
-        </script> --}}
-
+        </script>
 </x-app-layout>

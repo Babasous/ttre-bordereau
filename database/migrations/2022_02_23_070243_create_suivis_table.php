@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bordereaux', function (Blueprint $table) {
+        Schema::create('suivis', function (Blueprint $table) {
             $table->id();
-            $table->integer('quantite');
-            $table->integer('prix');
-            $table->integer('total');
+            $table->foreignId('bordereau_id');
             $table->timestamps();
             
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('fournisseur_id')->constrained();
-            $table->foreignId('materiel_id')->constrained();
+            $table->foreign('bordereau_id')->references('id')->on('bordereaux');
         });
     }
 
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bordereau');
+        Schema::dropIfExists('suivis');
     }
 };

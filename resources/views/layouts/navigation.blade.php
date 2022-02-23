@@ -16,10 +16,10 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Tableau de bord') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('suivi')" :active="request()->routeIs('suivi')">
+                    {{-- <x-nav-link :href="route('suivi')" :active="request()->routeIs('suivi')">
                         {{ __('Numero de suivi') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('bordereau')" :active="request()->routeIs('bordereau')">
+                    </x-nav-link> --}}
+                    <x-nav-link :href="route('bordereau.create')" :active="request()->routeIs('bordereau.create')">
                         {{ __('Bordereau') }}
                     </x-nav-link>
                     <x-nav-link :href="route('codeTracking')" :active="request()->routeIs('codeTracking')">
@@ -54,7 +54,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Se déconnecter') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

@@ -8,17 +8,17 @@ use App\Models\Bordereau;
 use App\Models\Fournisseur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
-class GlobalController extends Controller
+class BordereauController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {        
+    {       
         $fournisseurs = Fournisseur::all(); //dd($fournisseurs);
         
         $materiels = Materiel::all(); //dd($materiels);
@@ -31,7 +31,7 @@ class GlobalController extends Controller
 
         $bordereau = new Bordereau();
         
-        return view('bordereau', [
+        return view('bordereaux.create', [
 
             'bordereau' => $bordereau,
 
@@ -50,18 +50,18 @@ class GlobalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {          // dd($request);
-        // $code_bordereau = $request->input('code_bordereau');
+    {           
+        dd($request);
         $quantite = $request->input('quantite');
         $prix = $request->input('prix');
         $total = $request->input('total');
         $user_id = $request->input('user_id');
-        $materiel_id = $request->input('materiel_id');
         $fournisseur_id = $request->input('fournisseur_id');
+        $materiel_id = $request->input('materiel_id');
 
         $bordereau = new Bordereau();
 
-        // $bordereau->code_bordereau = $code_bordereau; 
+        
         $bordereau->quantite = $quantite; 
         $bordereau->prix = $prix; 
         $bordereau->total = $total;
@@ -71,13 +71,62 @@ class GlobalController extends Controller
         
         $bordereau->save();
 
-        return view('bordereau.create', [compact('bordereau')]);
+        return view('bordereaux.show', [compact('bordereau')]);
 
 
     }
 
-    public function show(){
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        // Recuperation de l'operateur connecté
+        $user = User::select('id','name','email')
+                ->where('id', '=', Auth::user()->id)
+                ->get();
+        //dd($user);
+        
+        return view('bordereau/create', [
 
-        //       
+            'user' => $user,
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

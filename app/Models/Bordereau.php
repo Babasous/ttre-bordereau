@@ -9,8 +9,7 @@ class Bordereau extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'code_bordereau',
+    protected $fillable = [        
         'quantite',
         'prix',
         'total',
